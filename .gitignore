@@ -37,3 +37,4 @@ jspm_packages
 
 ### Project ###
 dist/
+.nyc_output/
