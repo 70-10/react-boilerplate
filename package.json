@@ -1,26 +1,10 @@
 {
   "name": "react-boilerplate",
-  "version": "0.1.0",
   "description": "React Boilerplate",
-  "main": "index.js",
-  "scripts": {
-    "build": "NODE_ENV=production webpack --progress --colors",
-    "clean": "del dist",
-    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
-    "test": "npm run lint",
-    "lint": "eslint src"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/70-10/react-boilerplate.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
+  "version": "0.1.0",
   "bugs": {
     "url": "https://github.com/70-10/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/70-10/react-boilerplate#readme",
   "devDependencies": {
     "babel-core": "6.7.4",
     "babel-eslint": "6.0.2",
@@ -41,5 +25,20 @@
     "style-loader": "0.13.1",
     "webpack": "1.12.14",
     "webpack-dev-server": "1.14.1"
+  },
+  "homepage": "https://github.com/70-10/react-boilerplate#readme",
+  "keywords": [],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/70-10/react-boilerplate.git"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress --colors",
+    "clean": "del dist",
+    "lint": "eslint src",
+    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
+    "test": "npm run lint"
   }
 }
