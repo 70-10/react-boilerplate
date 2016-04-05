@@ -41,8 +41,9 @@
   "scripts": {
     "build": "NODE_ENV=production webpack --progress --colors",
     "clean": "del dist",
+    "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "lint": "eslint src",
-    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
+    "start": "npm run build && node server.js",
     "test": "npm run lint"
   }
 }
