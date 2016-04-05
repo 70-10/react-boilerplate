@@ -40,5 +40,9 @@
     "lint": "eslint src",
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "test": "npm run lint"
+  },
+  "dependencies": {
+    "koa": "1.2.0",
+    "koa-static": "2.0.0"
   }
 }
