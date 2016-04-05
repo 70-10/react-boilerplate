@@ -14,6 +14,12 @@ $ npm install
 $ npm start
 ```
 
+#### develop
+
+```
+$ npm run dev
+```
+
 ### build
 
 ```
