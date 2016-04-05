@@ -5,6 +5,10 @@
   "bugs": {
     "url": "https://github.com/70-10/react-boilerplate/issues"
   },
+  "dependencies": {
+    "koa": "1.2.0",
+    "koa-static": "2.0.0"
+  },
   "devDependencies": {
     "babel-core": "6.7.4",
     "babel-eslint": "6.0.2",
@@ -40,9 +44,5 @@
     "lint": "eslint src",
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "test": "npm run lint"
-  },
-  "dependencies": {
-    "koa": "1.2.0",
-    "koa-static": "2.0.0"
   }
 }
