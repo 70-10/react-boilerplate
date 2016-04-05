@@ -1,6 +1,5 @@
 const app = require("koa")();
 const serve = require("koa-static");
-const path = require("path");
 
 const config = require("../config");
 
