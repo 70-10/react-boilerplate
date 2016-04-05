@@ -1,8 +1,7 @@
 const webpack = require("webpack");
 const path = require("path");
 const rucksack = require("rucksack-css");
-
-const config = require("./config");
+const config = require("config");
 
 module.exports = {
   context: path.join(__dirname, "./src"),
