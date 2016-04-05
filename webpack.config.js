@@ -2,6 +2,8 @@ const webpack = require("webpack");
 const path = require("path");
 const rucksack = require("rucksack-css");
 
+const config = require("./config");
+
 module.exports = {
   context: path.join(__dirname, "./src"),
   entry: {
@@ -10,7 +12,7 @@ module.exports = {
     vendor: ["react"],
   },
   output: {
-    path: path.join(__dirname, "./dist"),
+    path: config.public_path,
     filename: "bundle.js",
   },
   module: {
