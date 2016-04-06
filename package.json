@@ -11,6 +11,7 @@
     "koa-static": "2.0.0"
   },
   "devDependencies": {
+    "babel-cli": "6.6.5",
     "babel-core": "6.7.4",
     "babel-eslint": "6.0.2",
     "babel-loader": "6.2.4",
@@ -40,11 +41,14 @@
     "url": "git+https://github.com/70-10/react-boilerplate.git"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress --colors",
-    "clean": "del public",
+    "build": "NODE_ENV=development npm run build:front && npm run build:server",
+    "build:release": "NODE_ENV=development npm run build:front && npm run build:server",
+    "build:front": "webpack --progress --colors",
+    "build:server": "babel src/server --out-dir lib/server --source-maps-inline",
+    "clean": "del lib",
     "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "lint": "eslint src",
-    "start": "npm run build && node server/server.js",
+    "start": "npm run build && node lib/server/server.js",
     "test": "npm run lint"
   }
 }

@@ -25,3 +25,15 @@ $ npm run dev
 ```
 $ npm run build
 ```
+
+#### build:server
+
+```
+$ NODE_ENV=development npm run build:server
+```
+
+#### build:front
+
+```
+$ NODE_ENV=development npm run build:front
+```
