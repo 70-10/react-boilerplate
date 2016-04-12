@@ -5,7 +5,14 @@
   "bugs": {
     "url": "https://github.com/70-10/react-boilerplate/issues"
   },
+  "dependencies": {
+    "config": "1.19.0",
+    "koa": "1.2.0",
+    "koa-router": "5.4.0",
+    "koa-static": "2.0.0"
+  },
   "devDependencies": {
+    "babel-cli": "6.6.5",
     "babel-core": "6.7.4",
     "babel-eslint": "6.0.2",
     "babel-loader": "6.2.4",
@@ -16,6 +23,8 @@
     "eslint": "2.6.0",
     "eslint-plugin-react": "4.2.3",
     "file-loader": "0.8.5",
+    "koa-webpack-dev-middleware": "1.2.0",
+    "koa-webpack-hot-middleware": "1.0.3",
     "postcss-loader": "0.8.2",
     "react": "0.14.8",
     "react-dom": "0.14.8",
@@ -35,10 +44,15 @@
     "url": "git+https://github.com/70-10/react-boilerplate.git"
   },
   "scripts": {
-    "build": "NODE_ENV=production webpack --progress --colors",
-    "clean": "del dist",
+    "build": "NODE_ENV=development npm run build:front && npm run build:server",
+    "build:release": "NODE_ENV=development npm run build:front && npm run build:server",
+    "build:front": "webpack --progress --colors",
+    "build:server": "babel src/server --out-dir lib/server --source-maps-inline",
+    "clean": "del lib",
+    "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
+    "dev-start": "npm run build:server && node lib/server/dev-server.js",
     "lint": "eslint src",
-    "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
+    "start": "npm run build && node lib/server/server.js",
     "test": "npm run lint"
   }
 }

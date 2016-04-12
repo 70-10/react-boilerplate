@@ -1,18 +1,20 @@
-const webpack = require("webpack");
 const path = require("path");
+const webpack = require("webpack");
 const rucksack = require("rucksack-css");
-const config = require("config");
+
+const webpackHotMiddleware = "webpack-hot-middleware/client?path=http://localhost:3001/__webpack_hmr";
 
 module.exports = {
+  devtool: "cheap-module-eval-source-map",
   context: path.join(__dirname, "./src/front"),
   entry: {
-    js: "./app.js",
-    html: "./index.html",
-    vendor: ["react"],
+    js: ["./app.js", webpackHotMiddleware],
+    vendor: ["react", webpackHotMiddleware]
   },
   output: {
-    path: config.public_path,
+    path: path.join(__dirname, "lib/public"),
     filename: "bundle.js",
+    publicPath: "/static/"
   },
   module: {
     loaders: [
@@ -53,10 +55,9 @@ module.exports = {
     new webpack.DefinePlugin({
       "process.env": { NODE_ENV: JSON.stringify(process.env.NODE_ENV || "development") }
     }),
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
-  devServer: {
-    contentBase: "./src/front",
-    hot: true
-  }
 };
