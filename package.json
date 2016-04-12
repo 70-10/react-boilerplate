@@ -8,6 +8,7 @@
   "dependencies": {
     "config": "1.19.0",
     "koa": "1.2.0",
+    "koa-router": "5.4.0",
     "koa-static": "2.0.0"
   },
   "devDependencies": {
@@ -22,6 +23,8 @@
     "eslint": "2.6.0",
     "eslint-plugin-react": "4.2.3",
     "file-loader": "0.8.5",
+    "koa-webpack-dev-middleware": "1.2.0",
+    "koa-webpack-hot-middleware": "1.0.3",
     "postcss-loader": "0.8.2",
     "react": "0.14.8",
     "react-dom": "0.14.8",
@@ -47,6 +50,7 @@
     "build:server": "babel src/server --out-dir lib/server --source-maps-inline",
     "clean": "del lib",
     "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
+    "dev-start": "npm run build:server && node lib/server/dev-server.js",
     "lint": "eslint src",
     "start": "npm run build && node lib/server/server.js",
     "test": "npm run lint"

@@ -20,6 +20,12 @@ $ npm start
 $ npm run dev
 ```
 
+#### develop for koa
+
+```
+$ npm run dev-start
+```
+
 ### build
 
 ```
