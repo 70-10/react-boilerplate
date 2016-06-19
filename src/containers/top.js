@@ -1,8 +1,8 @@
 import React from "react";
 import Container from "react-micro-container";
-import Counter from "../components/Counter";
+import Top from "../components/Top";
 
-export default class CounterContainer extends Container {
+export default class TopContainer extends Container {
   constructor(props) {
     super(props);
     this.state = {count: 0};
@@ -25,7 +25,7 @@ export default class CounterContainer extends Container {
 
   render() {
     return (
-      <Counter dispatch={this.dispatch} {...this.state} />
+      <Top dispatch={this.dispatch} {...this.state} />
     );
   }
 }

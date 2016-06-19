@@ -5,34 +5,23 @@
   "bugs": {
     "url": "https://github.com/70-10/react-boilerplate/issues"
   },
-  "dependencies": {
-    "config": "1.20.1",
-    "koa": "1.2.0",
-    "koa-router": "5.4.0",
-    "koa-static": "2.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "babel-cli": "6.7.5",
-    "babel-core": "6.7.6",
-    "babel-eslint": "6.0.2",
+    "babel-core": "6.9.1",
     "babel-loader": "6.2.4",
-    "babel-preset-es2015": "6.6.0",
+    "babel-preset-es2015": "6.9.0",
     "babel-preset-react": "6.5.0",
     "css-loader": "0.23.1",
     "del-cli": "0.2.0",
-    "eslint": "2.7.0",
-    "eslint-plugin-react": "4.3.0",
     "file-loader": "0.8.5",
-    "koa-webpack-dev-middleware": "1.2.0",
-    "koa-webpack-hot-middleware": "1.0.3",
-    "postcss-loader": "0.8.2",
-    "react": "0.14.8",
-    "react-dom": "0.14.8",
+    "postcss-loader": "0.9.1",
+    "react": "15.1.0",
+    "react-dom": "15.1.0",
     "react-hot-loader": "1.3.0",
-    "react-micro-container": "1.0.0",
-    "rucksack-css": "0.8.5",
+    "react-micro-container": "1.0.1",
+    "rucksack-css": "0.8.6",
     "style-loader": "0.13.1",
-    "webpack": "1.12.15",
+    "webpack": "1.13.1",
     "webpack-dev-server": "1.14.1"
   },
   "homepage": "https://github.com/70-10/react-boilerplate#readme",
@@ -44,15 +33,8 @@
     "url": "git+https://github.com/70-10/react-boilerplate.git"
   },
   "scripts": {
-    "build": "NODE_ENV=development npm run build:front && npm run build:server",
-    "build:release": "NODE_ENV=development npm run build:front && npm run build:server",
-    "build:front": "webpack --progress --colors",
-    "build:server": "babel src/server --out-dir lib/server --source-maps-inline",
-    "clean": "del lib",
-    "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
-    "dev-start": "npm run build:server && node lib/server/dev-server.js",
-    "lint": "eslint src",
-    "start": "npm run build && node lib/server/server.js",
-    "test": "npm run lint"
+    "build": "webpack --progress --colors",
+    "clean": "del dist",
+    "dev": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000"
   }
 }
