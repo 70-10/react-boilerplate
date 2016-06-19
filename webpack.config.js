@@ -1,17 +1,16 @@
 const webpack = require("webpack");
 const path = require("path");
 const rucksack = require("rucksack-css");
-const config = require("config");
 
 module.exports = {
-  context: path.join(__dirname, "./src/front"),
+  context: path.join(__dirname, "./src"),
   entry: {
     js: "./app.js",
     html: "./index.html",
     vendor: ["react"],
   },
   output: {
-    path: config.public_path,
+    path: "dist",
     filename: "bundle.js",
   },
   module: {
@@ -56,7 +55,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
   ],
   devServer: {
-    contentBase: "./src/front",
+    contentBase: "./src",
     hot: true
   }
 };
