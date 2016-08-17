@@ -1,9 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
 const rucksack = require("rucksack-css");
-const Dashboard = require("webpack-dashboard");
-const DashboardPlugin = require("webpack-dashboard/plugin");
-const dashboard = new Dashboard();
 
 module.exports = {
   context: path.join(__dirname, "./src"),
@@ -56,7 +53,6 @@ module.exports = {
       "process.env": { NODE_ENV: JSON.stringify(process.env.NODE_ENV || "development") }
     }),
     new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js"),
-    new DashboardPlugin(dashboard.setData)
   ],
   devServer: {
     contentBase: "./src",
