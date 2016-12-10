@@ -3376,7 +3376,7 @@
 
 	var ReactComponentTreeHook;
 
-	if (typeof process !== 'undefined' && ({"NODE_ENV":"test"}) && ("test") === 'test') {
+	if (typeof process !== 'undefined' && ({"NODE_ENV":"development"}) && ("development") === 'test') {
 	  // Temporary hack.
 	  // Inline requires don't work well with Jest:
 	  // https://github.com/facebook/react/issues/7240
